@@ -1,5 +1,11 @@
 # SmartDelivery: Optimizing Zomato's Operations with Predictive Analytics & Route Efficiency
 
+
+
+To quickly access the Streamlit interactive dashboard, use this link:
+[time-delivery-route-efficiency-zomato.streamlit.app](https://time-delivery-route-efficiency-zomato.streamlit.app/)
+
+
 ---
 
 ## Table of Contents
@@ -146,13 +152,12 @@ delivery location was successfully predicted using an XGBoost machine learning m
 ---
 ![XGBoost Top 10 Important Features](https://raw.githubusercontent.com/jihadakbr/time-delivery-route-efficiency-zomato/refs/heads/main/assets/images/xgboost-top-10-important-features.png)
 ### Insights:
-- The top three most impactful factors influencing the actual time taken from the driver to the customer are Road_traffic_density_low, Road_traffic_density_jam, and Multiple_deliveries.
+- The top three most impactful factors influencing the actual time taken from the driver to the customer are `Road_traffic_density_low`, `Road_traffic_density_jam`, and `Multiple_deliveries`.
 - This suggests that low road traffic density helps reduce delivery time, while traffic jams significantly increase it. Additionally, assigning multiple deliveries to a single driver also contributes to longer delivery times, as demonstrated by the partial dependence plot in the Jupyter Notebook.
 
 ---
 ![Distribution of Traffic Levels by Hour](https://raw.githubusercontent.com/jihadakbr/time-delivery-route-efficiency-zomato/refs/heads/main/assets/images/distribution-of-traffic-levels-by-hour.png)
 ### Insights:
-Insight
 - Traffic density trends:
    - Low: Late night to morning (22:16–11:15).
    - High: Midday (11:16–15:15).
@@ -187,13 +192,13 @@ Insight
 ## Recommendations
 
 1. **Optimize Delivery Routes**
-   - Utilize OSRM route projections to minimize delays caused by traffic or multiple deliveries.
+   - Utilize the OSRM API route projections to design optimized delivery routes, reducing delays caused by traffic and multiple deliveries.
 
 2. **Schedule Optimization**
-   - Adjust staffing and schedules to handle peak demand (17:00–23:00) efficiently and capitalize on low-traffic periods (late night to morning).
+   - Schedule deliveries during low-traffic periods (late night to morning) and adjust staffing levels to meet the high demand during peak order times (17:00–23:00).
 
 3. **Enhance Driver Performance**
-   - Implement targeted training programs for underperforming drivers and maintain vehicle conditions for better efficiency.
+   - Provide targeted training or guidance for underperforming drivers.
 
 ---
 
