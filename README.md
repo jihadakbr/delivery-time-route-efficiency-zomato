@@ -133,30 +133,54 @@ The project files on GitHub are:
 ---
 ![]()
 ### Insights
+- The best machine learning model: XGBoost. with RMSE 4.29 minutes. The actual time taken by drivers from the restaurant to the
+delivery location was successfully predicted using an XGBoost machine learning model, achieving an average prediction error (RMSE) of approximately 4.29 minutes. This is a strong result, considering the standard deviation of the actual delivery times is around 9 minutes.
+- Additionally, I generated a projected best route using the OSRM API and visualized it on a Folium map. This allows us to better understand the driver’s actual route and provides more accurate estimates of both distance and travel time.
 
 ---
 ![]()
 ### Insights
+- The graph comparing actual and predicted delivery times shows a strong linear relationship, closely following the line y = x.
+- The red line represents this ideal relationship, indicating that, on average, the model’s predicted delivery times accurately reflect the actual delivery times.
 
 ---
 ![]()
 ### Insights
+- The top three most impactful factors influencing the actual time taken from the driver to the customer are Road_traffic_density_low, Road_traffic_density_jam, and Multiple_deliveries.
+- This suggests that low road traffic density helps reduce delivery time, while traffic jams significantly increase it. Additionally, assigning multiple deliveries to a single driver also contributes to longer delivery times, as demonstrated by the partial dependence plot in the Jupyter Notebook.
 
 ---
 ![]()
 ### Insights
+Insight
+- Traffic density trends:
+   - Low: Late night to morning (22:16–11:15).
+   - High: Midday (11:16–15:15).
+   - Medium: Evening rush (15:16–19:15).
+   - Jam: Night (19:16–22:15).
+- Most orders occur between 17:00–23:00, aligning with peak traffic hours.
 
 ---
 ![]()
 ### Insights
+- OSRM parameters for the car profile were used as the baseline to assess driver performance.
+- Since drivers may use a variety of vehicles (Motorcycle, Bicycle, Electric Scooter, and Scooter), and one driver can switch between vehicle types, I used a speed ratio threshold of below 0.5 to identify underperforming drivers.
+- Additionally, drivers were also considered underperforming if their actual travel time deviated by more than 2 standard deviations (approximately ±4 minutes) from the mean. For example, if the average actual time is 26 minutes, drivers with times above 30 minutes or below 22 minutes were flagged.
 
 ---
 ![]()
 ### Insights
+- Similar to the previous slide, this shows the expected travel duration from the OSRM API using the car profile as the baseline. I flagged drivers as slower than expected if their actual travel time was less than 50% of the OSRM expected duration.
+- Based on this threshold, most drivers (in the green-shaded area) were faster than expected, while a few (in the redshaded area) were slower than expected.
 
 ---
 ![]()
 ### Insights
+- This report summarizes the underperforming drivers. I identified underperforming drivers based on the following criteria:
+   - Rating below 0.35
+   - Speed ratio below 0.5
+   - Actual travel time deviating by more than 2 standard deviations from the mean
+   - Poor vehicle condition (a score greater than 2 on a 0–3 scale, where 0 indicates good condition)
 
 ---
 
@@ -174,7 +198,18 @@ The project files on GitHub are:
 ---
 
 ## Dashboard
-[Dashboard Image Placeholder]()
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
 
 ---
 
