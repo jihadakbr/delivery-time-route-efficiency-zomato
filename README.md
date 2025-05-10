@@ -1,10 +1,9 @@
 # SmartDelivery: Optimizing Zomato's Operations with Predictive Analytics & Route Efficiency
 
-
+**SmartDelivery** is an AI-driven predictive analytics system designed to optimize Zomato's delivery operations by forecasting delivery times and improving route efficiency. Built on a dataset of 46,000 orders (Feb–Apr 2022), it leverages XGBoost (RMSE: 4.29 minutes) and OSRM API for real-time route optimization, empowering data-driven decisions to reduce delays and enhance customer satisfaction.
 
 To quickly access the Streamlit interactive dashboard, use this link:
-[time-delivery-route-efficiency-zomato.streamlit.app](https://time-delivery-route-efficiency-zomato.streamlit.app/)
-
+- [time-delivery-route-efficiency-zomato.streamlit.app](https://time-delivery-route-efficiency-zomato.streamlit.app/)
 
 ---
 
