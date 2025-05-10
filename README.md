@@ -3,7 +3,7 @@
 **SmartDelivery** is an AI-driven predictive analytics system designed to optimize Zomato's delivery operations by forecasting delivery times and improving route efficiency. Built on a dataset of 46,000 orders (Feb–Apr 2022), it leverages XGBoost (RMSE: 4.29 minutes) and OSRM API for real-time route optimization, empowering data-driven decisions to reduce delays and enhance customer satisfaction.
 
 To quickly access the Streamlit interactive dashboard, use this link:
-- [time-delivery-route-efficiency-zomato.streamlit.app](https://time-delivery-route-efficiency-zomato.streamlit.app/)
+- [delivery-time-route-efficiency-zomato.streamlit.app](https://delivery-time-route-efficiency-zomato.streamlit.app/)
 
 ---
 
@@ -74,11 +74,11 @@ To quickly access the Streamlit interactive dashboard, use this link:
 ---
 
 ## Project Overview
-![Project Overview Diagram](https://raw.githubusercontent.com/jihadakbr/time-delivery-route-efficiency-zomato/refs/heads/main/assets/images/workflow-diagram-delivery-time.png)
+![Project Overview Diagram](https://raw.githubusercontent.com/jihadakbr/delivery-time-route-efficiency-zomato/refs/heads/main/assets/images/workflow-diagram-delivery-time.png)
 
 The project was deployed using Streamlit and structured as follows:
 ```
-time-delivery-route-efficiency-zomato/
+delivery-time-route-efficiency-zomato/
 ├── smartdelivery_app.py    # Main entry point
 ├── custom_pages/
 │   ├── home.py             # Landing page
@@ -97,7 +97,7 @@ time-delivery-route-efficiency-zomato/
 └── assets/                 # Static files (images, styles, JS)
 ```
 
-Streamlit link: [time-delivery-route-efficiency-zomato.streamlit.app](https://time-delivery-route-efficiency-zomato.streamlit.app/)
+Streamlit link: [delivery-time-route-efficiency-zomato.streamlit.app](https://delivery-time-route-efficiency-zomato.streamlit.app/)
 <br>
 <br>
 <br>
@@ -136,26 +136,26 @@ The project files on GitHub are:
 - Considering the standard deviation of actual delivery times (~9 minutes), this is a highly reliable result.
 
 ---
-![Machine Learning Models Comparison](https://raw.githubusercontent.com/jihadakbr/time-delivery-route-efficiency-zomato/refs/heads/main/assets/images/machine-learning-models-comparison.png)
+![Machine Learning Models Comparison](https://raw.githubusercontent.com/jihadakbr/delivery-time-route-efficiency-zomato/refs/heads/main/assets/images/machine-learning-models-comparison.png)
 ### Insights:
 - The best machine learning model: XGBoost. with RMSE 4.29 minutes. The actual time taken by drivers from the restaurant to the
 delivery location was successfully predicted using an XGBoost machine learning model, achieving an average prediction error (RMSE) of approximately 4.29 minutes. This is a strong result, considering the standard deviation of the actual delivery times is around 9 minutes.
 - Additionally, I generated a projected best route using the OSRM API and visualized it on a Folium map. This allows us to better understand the driver’s actual route and provides more accurate estimates of both distance and travel time.
 
 ---
-![Actual vs Predicted Delivery Times](https://raw.githubusercontent.com/jihadakbr/time-delivery-route-efficiency-zomato/refs/heads/main/assets/images/actual-vs-predicted-delivery-times.png)
+![Actual vs Predicted Delivery Times](https://raw.githubusercontent.com/jihadakbr/delivery-time-route-efficiency-zomato/refs/heads/main/assets/images/actual-vs-predicted-delivery-times.png)
 ### Insights:
 - The graph comparing actual and predicted delivery times shows a strong linear relationship, closely following the line y = x.
 - The red line represents this ideal relationship, indicating that, on average, the model’s predicted delivery times accurately reflect the actual delivery times.
 
 ---
-![XGBoost Top 10 Important Features](https://raw.githubusercontent.com/jihadakbr/time-delivery-route-efficiency-zomato/refs/heads/main/assets/images/xgboost-top-10-important-features.png)
+![XGBoost Top 10 Important Features](https://raw.githubusercontent.com/jihadakbr/delivery-time-route-efficiency-zomato/refs/heads/main/assets/images/xgboost-top-10-important-features.png)
 ### Insights:
 - The top three most impactful factors influencing the actual time taken from the driver to the customer are `Road_traffic_density_low`, `Road_traffic_density_jam`, and `Multiple_deliveries`.
 - This suggests that low road traffic density helps reduce delivery time, while traffic jams significantly increase it. Additionally, assigning multiple deliveries to a single driver also contributes to longer delivery times, as demonstrated by the partial dependence plot in the Jupyter Notebook.
 
 ---
-![Distribution of Traffic Levels by Hour](https://raw.githubusercontent.com/jihadakbr/time-delivery-route-efficiency-zomato/refs/heads/main/assets/images/distribution-of-traffic-levels-by-hour.png)
+![Distribution of Traffic Levels by Hour](https://raw.githubusercontent.com/jihadakbr/delivery-time-route-efficiency-zomato/refs/heads/main/assets/images/distribution-of-traffic-levels-by-hour.png)
 ### Insights:
 - Traffic density trends:
    - Low: Late night to morning (22:16–11:15).
@@ -165,20 +165,20 @@ delivery location was successfully predicted using an XGBoost machine learning m
 - Most orders occur between 17:00–23:00, aligning with peak traffic hours.
 
 ---
-![Speed Ratio vs Ratings](https://raw.githubusercontent.com/jihadakbr/time-delivery-route-efficiency-zomato/refs/heads/main/assets/images/speed-ratio-vs-ratings.png)
+![Speed Ratio vs Ratings](https://raw.githubusercontent.com/jihadakbr/delivery-time-route-efficiency-zomato/refs/heads/main/assets/images/speed-ratio-vs-ratings.png)
 ### Insights:
 - OSRM parameters for the car profile were used as the baseline to assess driver performance.
 - Since drivers may use a variety of vehicles (Motorcycle, Bicycle, Electric Scooter, and Scooter), and one driver can switch between vehicle types, I used a speed ratio threshold of below 0.5 to identify underperforming drivers.
 - Additionally, drivers were also considered underperforming if their actual travel time deviated by more than 2 standard deviations (approximately ±4 minutes) from the mean. For example, if the average actual time is 26 minutes, drivers with times above 30 minutes or below 22 minutes were flagged.
 
 ---
-![Actual Time vs Expected Duration](https://raw.githubusercontent.com/jihadakbr/time-delivery-route-efficiency-zomato/refs/heads/main/assets/images/actual-time-vs-expected-duration.png)
+![Actual Time vs Expected Duration](https://raw.githubusercontent.com/jihadakbr/delivery-time-route-efficiency-zomato/refs/heads/main/assets/images/actual-time-vs-expected-duration.png)
 ### Insights:
 - Similar to the previous slide, this shows the expected travel duration from the OSRM API using the car profile as the baseline. I flagged drivers as slower than expected if their actual travel time was less than 50% of the OSRM expected duration.
 - Based on this threshold, most drivers (in the green-shaded area) were faster than expected, while a few (in the redshaded area) were slower than expected.
 
 ---
-![Underperforming Drivers Report](https://raw.githubusercontent.com/jihadakbr/time-delivery-route-efficiency-zomato/refs/heads/main/assets/images/underperforming-drivers-report.png)
+![Underperforming Drivers Report](https://raw.githubusercontent.com/jihadakbr/delivery-time-route-efficiency-zomato/refs/heads/main/assets/images/underperforming-drivers-report.png)
 ### Insights:
 - This report summarizes the underperforming drivers. I identified underperforming drivers based on the following criteria:
    - Rating below 0.35
@@ -202,16 +202,16 @@ delivery location was successfully predicted using an XGBoost machine learning m
 ---
 
 ## Dashboard
-![Dashboard 1](https://raw.githubusercontent.com/jihadakbr/time-delivery-route-efficiency-zomato/refs/heads/main/assets/images/dashboard-1.png)
-![Dashboard 2](https://raw.githubusercontent.com/jihadakbr/time-delivery-route-efficiency-zomato/refs/heads/main/assets/images/dashboard-2.png)
-![Dashboard 3](https://raw.githubusercontent.com/jihadakbr/time-delivery-route-efficiency-zomato/refs/heads/main/assets/images/dashboard-3.png)
-![Dashboard 4](https://raw.githubusercontent.com/jihadakbr/time-delivery-route-efficiency-zomato/refs/heads/main/assets/images/dashboard-4.png)
-![Dashboard 5](https://raw.githubusercontent.com/jihadakbr/time-delivery-route-efficiency-zomato/refs/heads/main/assets/images/dashboard-5.png)
-![Dashboard 6](https://raw.githubusercontent.com/jihadakbr/time-delivery-route-efficiency-zomato/refs/heads/main/assets/images/dashboard-6.png)
-![Dashboard 7](https://raw.githubusercontent.com/jihadakbr/time-delivery-route-efficiency-zomato/refs/heads/main/assets/images/dashboard-7.png)
-![Dashboard 8](https://raw.githubusercontent.com/jihadakbr/time-delivery-route-efficiency-zomato/refs/heads/main/assets/images/dashboard-8.png)
-![Dashboard 9](https://raw.githubusercontent.com/jihadakbr/time-delivery-route-efficiency-zomato/refs/heads/main/assets/images/dashboard-9.png)
-![Dashboard 10](https://raw.githubusercontent.com/jihadakbr/time-delivery-route-efficiency-zomato/refs/heads/main/assets/images/dashboard-10.png)
+![Dashboard 1](https://raw.githubusercontent.com/jihadakbr/delivery-time-route-efficiency-zomato/refs/heads/main/assets/images/dashboard-1.png)
+![Dashboard 2](https://raw.githubusercontent.com/jihadakbr/delivery-time-route-efficiency-zomato/refs/heads/main/assets/images/dashboard-2.png)
+![Dashboard 3](https://raw.githubusercontent.com/jihadakbr/delivery-time-route-efficiency-zomato/refs/heads/main/assets/images/dashboard-3.png)
+![Dashboard 4](https://raw.githubusercontent.com/jihadakbr/delivery-time-route-efficiency-zomato/refs/heads/main/assets/images/dashboard-4.png)
+![Dashboard 5](https://raw.githubusercontent.com/jihadakbr/delivery-time-route-efficiency-zomato/refs/heads/main/assets/images/dashboard-5.png)
+![Dashboard 6](https://raw.githubusercontent.com/jihadakbr/delivery-time-route-efficiency-zomato/refs/heads/main/assets/images/dashboard-6.png)
+![Dashboard 7](https://raw.githubusercontent.com/jihadakbr/delivery-time-route-efficiency-zomato/refs/heads/main/assets/images/dashboard-7.png)
+![Dashboard 8](https://raw.githubusercontent.com/jihadakbr/delivery-time-route-efficiency-zomato/refs/heads/main/assets/images/dashboard-8.png)
+![Dashboard 9](https://raw.githubusercontent.com/jihadakbr/delivery-time-route-efficiency-zomato/refs/heads/main/assets/images/dashboard-9.png)
+![Dashboard 10](https://raw.githubusercontent.com/jihadakbr/delivery-time-route-efficiency-zomato/refs/heads/main/assets/images/dashboard-10.png)
 
 ---
 
