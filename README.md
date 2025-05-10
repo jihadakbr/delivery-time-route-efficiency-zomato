@@ -198,18 +198,16 @@ Insight
 ---
 
 ## Dashboard
-![]()
-![]()
-![]()
-![]()
-![]()
-![]()
-![]()
-![]()
-![]()
-![]()
-![]()
-![]()
+![Dashboard 1](https://raw.githubusercontent.com/jihadakbr/time-delivery-route-efficiency-zomato/refs/heads/main/assets/images/dashboard-1.png)
+![Dashboard 2](https://raw.githubusercontent.com/jihadakbr/time-delivery-route-efficiency-zomato/refs/heads/main/assets/images/dashboard-2.png)
+![Dashboard 3](https://raw.githubusercontent.com/jihadakbr/time-delivery-route-efficiency-zomato/refs/heads/main/assets/images/dashboard-3.png)
+![Dashboard 4](https://raw.githubusercontent.com/jihadakbr/time-delivery-route-efficiency-zomato/refs/heads/main/assets/images/dashboard-4.png)
+![Dashboard 5](https://raw.githubusercontent.com/jihadakbr/time-delivery-route-efficiency-zomato/refs/heads/main/assets/images/dashboard-5.png)
+![Dashboard 6](https://raw.githubusercontent.com/jihadakbr/time-delivery-route-efficiency-zomato/refs/heads/main/assets/images/dashboard-6.png)
+![Dashboard 7](https://raw.githubusercontent.com/jihadakbr/time-delivery-route-efficiency-zomato/refs/heads/main/assets/images/dashboard-7.png)
+![Dashboard 8](https://raw.githubusercontent.com/jihadakbr/time-delivery-route-efficiency-zomato/refs/heads/main/assets/images/dashboard-8.png)
+![Dashboard 9](https://raw.githubusercontent.com/jihadakbr/time-delivery-route-efficiency-zomato/refs/heads/main/assets/images/dashboard-9.png)
+![Dashboard 10](https://raw.githubusercontent.com/jihadakbr/time-delivery-route-efficiency-zomato/refs/heads/main/assets/images/dashboard-10.png)
 
 ---
 
